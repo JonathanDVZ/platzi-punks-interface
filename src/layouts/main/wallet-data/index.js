@@ -7,7 +7,7 @@ import {
   TagCloseButton,
 } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
 import { injected } from "../../../config/web3";
 import { useCallback, useEffect, useState } from "react";
@@ -50,9 +50,7 @@ const WalletData = () => {
       {active ? (
         <Tag colorScheme="green" borderRadius="full">
           <TagLabel>
-            <Router>
-              <Link to="/punks">{truncatedAddress}</Link>
-            </Router>
+            <Link to="/punks">{truncatedAddress}</Link>
           </TagLabel>
           <Badge
             d={{
@@ -61,8 +59,7 @@ const WalletData = () => {
             }}
             variant="solid"
             fontSize="0.8rem"
-            ml={1}
-          >
+            ml={1}>
             ~{balance} Ξ
           </Badge>
           <TagCloseButton onClick={disconnect} />
@@ -74,8 +71,7 @@ const WalletData = () => {
           size={"sm"}
           leftIcon={<AddIcon />}
           onClick={connect}
-          disabled={isUnsupportedChain}
-        >
+          disabled={isUnsupportedChain}>
           {isUnsupportedChain ? "Red no soportada" : "Conectar wallet"}
         </Button>
       )}

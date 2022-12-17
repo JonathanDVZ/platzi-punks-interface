@@ -1,19 +1,15 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./views/home";
+import Punks from "./views/punks";
 import MainLayout from "./layouts/main";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-    exact: true,
-  },
-]);
 
 function App() {
   return (
     <MainLayout>
-      <RouterProvider router={router} />
+      <Routes>
+        <Route path="/" element={<Home />} exact />
+        <Route path="/punks" element={<Punks />} exact />
+      </Routes>
     </MainLayout>
   );
 }
