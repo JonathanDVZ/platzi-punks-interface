@@ -35,8 +35,7 @@ const MainLayout = ({ children }) => {
         maxW={"7xl"}
         width="100%"
         bg={useColorModeValue("white", "gray.800")}
-        px={4}
-      >
+        px={4}>
         <Flex
           bg={useColorModeValue("white", "gray.800")}
           color={useColorModeValue("gray.600", "white")}
@@ -47,8 +46,7 @@ const MainLayout = ({ children }) => {
           borderStyle={"solid"}
           borderColor={useColorModeValue("gray.200", "gray.900")}
           alignItems={"center"}
-          justifyContent={"space-between"}
-        >
+          justifyContent={"space-between"}>
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -58,7 +56,7 @@ const MainLayout = ({ children }) => {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Flex alignItems="center">
-              <Image src="./images/platzi.svg" width="80px" />
+              <Image src="/images/platzi.svg" width="80px" />
               <Heading size="md" color="purple" mt={0.2} ml={1}>
                 Punks
               </Heading>
@@ -66,8 +64,7 @@ const MainLayout = ({ children }) => {
             <HStack
               as={"nav"}
               spacing={4}
-              display={{ base: "none", md: "flex" }}
-            >
+              display={{ base: "none", md: "flex" }}>
               {Links.map(({ name, to }) => (
                 <NavLink key={name} to={to}>
                   {name}
